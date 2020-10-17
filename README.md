@@ -17,7 +17,7 @@ To get up and running:
 
 **1.** Clone the repo.
 ```
-git clone repo_name
+git clone repo_link
 ```
 
 **2.**  ```cd``` into repo. Use the same directory name(below) if you do not change it.
