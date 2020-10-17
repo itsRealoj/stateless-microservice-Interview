@@ -47,7 +47,7 @@ This is a mock authentication so you can pass in any username or password to log
  4. Hit ```Send```. You will get a result in this format:
  ```
  {
-    "user": "moi",
+    "user": "real",
     "authorized": true,
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlhdCI6MTUzMjAwNDkwMSwiZXhwIjoxNTMyMDI2NTAxfQ.sonItbpZ_yKsRLDXNfDqwN6yN5VbdMVDhgKAMxDmPFY"
 }
@@ -81,7 +81,7 @@ Run ```npm test``` from the application's root directory.
 
 I used nyc to add coverage to mocha tests by following the Quick Start at (https://istanbul.js.org/)
 
-Adding coverage to your mocha tests could not be easier:
+This is what you will do to add coverage to my mocha tests:
 
 $ npm install --save-dev nyc
 

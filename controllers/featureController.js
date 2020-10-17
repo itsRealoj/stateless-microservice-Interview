@@ -6,8 +6,8 @@ const jsonpatch = require('fast-json-patch')
 exports.patch_json_patch = [
 
   // Validate input fields. Trim spaces around username
-  body('jsonObject', 'JSON object must not be empty.').isLength({ min: 1 }),
-  body('jsonPatchObject', 'JSON patch object must not be empty.').isLength({ min: 1 }),
+  body('jsonObject', 'JSON object must have a value.').isLength({ min: 1 }),
+  body('jsonPatchObject', 'JSON patch object must have a value.').isLength({ min: 1 }),
 
   // Process the request after validating.
   (req, res, next) => {
