@@ -1,3 +1,45 @@
+# MICROSERVICES CLIENT SETUP
+
+ # Frontend has been built in REACTJS 
+
+ ## Please checkout the ``user Stories`` here:
+
+This frontend of the app has two pages -
+
+ * Login page
+ * Patching page
+
+
+## Setup
+
+## Kanbans Project Flow available here:
+https://github.com/itsRealoj/stateless-microservice-Interview/projects/1
+
+In the project directory, you can run:
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm build`
+
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+Your app is ready to be deployed!
+
+
+
 # Backend Microservice To Support And Simplify Applications
 
 A simple stateless microservice in Nodejs, with two major functionalities -
@@ -15,17 +57,17 @@ The API requires:
 
 To get up and running: 
 
-**1.** Clone the repo.
+**1.** Clone the git@github.com:itsRealoj/stateless-microservice-Interview.git
 ```
-git clone repo_link
+git clone git@github.com:itsRealoj/stateless-microservice-Interview.git
 ```
 
 **2.**  ```cd``` into repo. Use the same directory name(below) if you do not change it.
 ```
-cd repo_name
+cd stateless-microservice
 ```
 
-**3.**  Setup the application by installing its dependencies with
+**3.**  use npm to set up the dependencies of the application by using the command below
 ```
 npm install
 ```
@@ -37,17 +79,17 @@ npm install
 
 ## Testing the API routes.
 
-Since this is mostly an API with post and patch requests, testing will be done with [Postman](https://www.getpostman.com/)
+You can use [Postman](https://www.getpostman.com/) to test the routes, but I have added a working ReactJS frontend to provide the UI for PATCH function and Login interface.
 
 ### Authentication
-This is a mock authentication so you can pass in any username or password to login.
+You can pass in any username or password to login.
  1. Set the request to **POST** and the url to _/api/users/login_. 
  2. In the **Body** for the Postman request, select **x-www-form-urlencoded**.
  3. You will be setting 2 keys (for username and password). Set the ```username``` key to any name. Set ```password``` to any password (minimum of 6 characters).
  4. Hit ```Send```. You will get a result in this format:
  ```
  {
-    "user": "real",
+    "user": "John",
     "authorized": true,
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlhdCI6MTUzMjAwNDkwMSwiZXhwIjoxNTMyMDI2NTAxfQ.sonItbpZ_yKsRLDXNfDqwN6yN5VbdMVDhgKAMxDmPFY"
 }
@@ -102,7 +144,7 @@ All logs are saved in ```hackerbay.log``` in the application's root.
 
  * [Node.js](https://nodejs.org)
  * [Express](https://expressjs.com/)
- * [Mocha](https://mochajs.org/) - For testing
+ * [Mocha](https://mochajs.org/) - For tests
 
 
 ## Results
@@ -110,3 +152,6 @@ All logs are saved in ```hackerbay.log``` in the application's root.
  1. Test: All tests specified in test.js with [Mocha](https://mochajs.org/) are running well (use: npm test)
  
  2. Istanbul_ coverage is working using nyc at https://istanbul.js.org/ to generate code test coverage reports.
+
+
+ 
