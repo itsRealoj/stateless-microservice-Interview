@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken')
 require('dotenv').load()
 
 // Get the extension of a url/file
-// Credit for regular expression - https://stackoverflow.com/a/47767860/2377343
-exports.fileExtension = (url) => { return url.split('.').pop().split(/\#|\?/)[0] }
+// exports.fileExtension = (url) => { return url.split('.').pop().split(/\#|\?/)[0] }
 
 // Verify token
 exports.verifyToken = (req, res, next) => {
@@ -16,7 +15,7 @@ exports.verifyToken = (req, res, next) => {
 
   // Verify token
   jwt.verify(token, process.env.jwtSecret, (err, decoded) => {
-    if (err) { return res.status(401).send({ authorized: false, error: 'Verification failed or token has expired.' }) }
+    if (err) { return res.status(401).send({ authorized: false, error: 'Verification failed or token is expired.' }) }
     
     // No error so save decoded token into req.user and go to next process.
     req.user = decoded

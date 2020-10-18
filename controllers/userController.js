@@ -26,15 +26,15 @@ exports.user_login_post = [
 
       // Save username and password. Convert username to lowercase for db consistency
       const username = req.body.username.toLowerCase()
-      const password = req.body.password
+      // const password = req.body.password
 
       // Create a token for the user.
-      const token = jwt.sign({ username: username }, process.env.jwtSecret,
-        {expiresIn: 21600 })
+      const token = jwt.sign({ username }, process.env.jwtSecret,
+        { expiresIn: 21600 })
         
       // Set token in header
       req.headers['token'] = token
-      res.status(200).send({ user: username, authorized: true, token: token })
+      res.status(200).send({ user: username, authorized: true, token })
     }
   },
 ]

@@ -81,7 +81,7 @@ Run ```npm test``` from the application's root directory.
 
 I used nyc to add coverage to mocha tests by following the Quick Start at (https://istanbul.js.org/)
 
-This is what you will do to add coverage to my mocha tests:
+This is what you will do to add coverage to the mocha tests:
 
 $ npm install --save-dev nyc
 
