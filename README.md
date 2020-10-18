@@ -1,6 +1,6 @@
-# MICROSERVICES CLIENT SETUP
+# Microservice App Client Setup
 
- # Frontend has been built in REACTJS 
+Frontend has been built in ``REACTJS``
 
 ### Please checkout the ``user Stories`` here:
 https://github.com/itsRealoj/stateless-microservice-Interview/projects/1
@@ -20,7 +20,7 @@ In the project directory, you can run:
 
 ## Available Scripts
 
-In the project directory, you can run:
+After cloning the project to your computer, cd to the project directory and run:
 
 ### `npm start`
 
@@ -41,7 +41,7 @@ Your app is ready to be deployed!
 
 
 
-# Backend Microservice To Support And Simplify Applications
+# Microservice App Server Setup
 
 A simple stateless microservice in Nodejs, with two major functionalities -
 
