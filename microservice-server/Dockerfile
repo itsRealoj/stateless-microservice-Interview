@@ -18,8 +18,8 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-# Expose port 3000 to the outside once the container has launched
-EXPOSE 3000   
+# Expose port 5000 to the outside once the container has launched
+EXPOSE 5000   
 
 # Command to run the app when docker image is launching
 CMD [ "npm", "start" ]

@@ -30,7 +30,7 @@ cd repo_name
 npm install
 ```
 
-**4.**  The app gets up and running on port 3000 with ```npm start```.
+**4.**  The app gets up and running on port 5000 with ```npm start```.
 
 **5.**  **Important** Create a ```.env``` file and set ```jwtSecret``` to any secret phrase you want.
  

@@ -20,7 +20,7 @@ In the project directory, you can run:
 
 ## Available Scripts
 
-After cloning the project to your computer, cd to the project directory and run:
+After cloning the project to your computer, cd to the project directory, microservice-client and run:
 
 ### `npm start`
 
@@ -73,7 +73,7 @@ cd stateless-microservice
 npm install
 ```
 
-**4.**  The app gets up and running on port 3000 with ```npm start```.
+**4.**  The app gets up and running on port 5000 with ```npm start```.
 
 **5.**  **Important** Create a ```.env``` file and set ```jwtSecret``` to any secret phrase you want.
  

@@ -114,3 +114,4 @@
 ::1 - - [18/Oct/2020:04:41:02 +0000] "POST /api/patch_object HTTP/1.1" - - "-" "PostmanRuntime/7.26.5"
 ::1 - - [18/Oct/2020:04:41:16 +0000] "DELETE /api/patch_object HTTP/1.1" - - "-" "PostmanRuntime/7.26.5"
 ::1 - - [18/Oct/2020:04:45:57 +0000] "PATCH /api/patch_object HTTP/1.1" - - "-" "PostmanRuntime/7.26.5"
+::ffff:127.0.0.1 - - [18/Oct/2020:16:38:52 +0000] "GET / HTTP/1.1" - - "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0"
