@@ -27,6 +27,7 @@
     "morgan": "^1.9.1",
     "node-gyp": "^5.0.7",
     "nodemon": "^1.19.1",
+    "normalize-port": "^1.0.0",
     "pug": "^2.0.4",
     "serve-favicon": "^2.4.5",
     "superagent": "^3.8.3",

@@ -22,7 +22,9 @@ exports.patch_json_patch = [
 
     // Save object-to-patch and patch-object from the request.
     const jsonObject = JSON.parse(req.body.jsonObject)
+    console.log(jsonObject)
     const jsonPatchObject = JSON.parse(req.body.jsonPatchObject)
+    console.log(jsonPatchObject)
 
     // Save patch in new variable.
     const patchedObject = jsonpatch.applyPatch(jsonObject, jsonPatchObject).newDocument

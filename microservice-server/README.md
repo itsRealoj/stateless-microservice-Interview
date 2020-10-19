@@ -37,7 +37,9 @@ npm install
 
 ## Testing the API routes.
 
-Since this is mostly an API with post and patch requests, testing will be done with [Postman](https://www.getpostman.com/)
+Since this is an API with post and patch requests, testing will be done The routes are testable with Postman.
+
+I have set the client to display patching routes.
 
 ### Authentication
 You can pass in any username or password to login.

@@ -9,33 +9,12 @@ const debug = require('debug')('stateless-microservice-hackerbay:server')
 const app = require('./app')
 
 /**
- * Get port from environment and store in Express.
- */
-
-const port = normalizePort(process.env.PORT || '5000')
-app.set('port', port)
-
-/**
- * Create HTTP server.
- */
-
-const server = http.createServer(app)
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port)
-server.on('error', onError)
-server.on('listening', onListening)
-
-/**
  * Normalize a port into a number, string, or false.
  */
-
 function normalizePort(val) {
   const port = parseInt(val, 10)
 
+  // eslint-disable-next-line no-restricted-globals
   if (isNaN(port)) {
     // named pipe
     return val
@@ -50,7 +29,19 @@ function normalizePort(val) {
 }
 
 /**
- * Event listener for HTTP server "error" event.
+ * Get port from environment and store in Express.
+ */
+const port = normalizePort(process.env.PORT || '3001')
+app.set('port', port)
+
+/**
+ * Create HTTP server.
+ */
+
+const server = http.createServer(app)
+
+/**
+ * Listen on provided port, on all network interfaces.
  */
 
 function onError(error) {
@@ -62,7 +53,7 @@ function onError(error) {
     ? `Pipe ${port}`
     : `Port ${port}`
 
-  // handle specific listen errors with friendly messages
+    // handle specific listen errors with friendly messages
   switch (error.code) {
   case 'EACCES':
     console.error(`${bind} requires elevated privileges`)
@@ -77,10 +68,6 @@ function onError(error) {
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
-
 function onListening() {
   const addr = server.address()
   const bind = typeof addr === 'string'
@@ -88,3 +75,12 @@ function onListening() {
     : `port ${addr.port}`
   debug(`Listening on ${bind}`)
 }
+
+
+server.on('error', onError)
+server.on('listening', onListening)
+
+
+server.listen(port, () => {
+  console.log(`server listening on port ${port}`)
+})

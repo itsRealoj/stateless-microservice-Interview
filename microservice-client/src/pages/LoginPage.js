@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer';
 import axios from 'axios';
 
 
 const LoginPage = () => {
-  
-  const [user, setUser] = useState({
-    name: '',
-    password: ''
-  });
+  const [user, setUser] = useState({firstname: '', password: ''});
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+ 
+        
+      const submitHandler = (e) => {
+          e.preventDefault()
+          setUser({firstname: username, password: password})
+          console.log(`username is: ${username}`);
+          console.log(`password is: ${password}`);
+      }
 
-  useEffect(() => {
-    // POST request using axios inside useEffect React hook
-    setUser({ name: user.username, password: user.password });
-    console.log(user);
-    axios.post('http://localhost:5000/api/login', user)
+     // POST request using axios inside useEffect React hook
+    // setUser({ name: username, password });
+    axios.post(
+      'http://localhost:3001/api/users/login', 
+      {
+      username: user.firstname, password: user.password
+      })
         .then(response => {
-          console.log(response)
+          console.log(response.data.user)
         }).catch(error => console.log(error))
 
-}, []);
-    
-    const submitHandler = (e) => {
-        e.preventDefault()
-    }
-    
     return(
         <div>
             <FormContainer>
@@ -43,7 +43,6 @@ const LoginPage = () => {
                       onChange={(e) => setUsername(e.target.value)}
                     ></Form.Control>
                   </Form.Group>
-
                   <Form.Group controlId='password'>
                     <Form.Label>Password</Form.Label>
                     <Form.Control
@@ -53,13 +52,11 @@ const LoginPage = () => {
                       onChange={(e) => setPassword(e.target.value)}
                     ></Form.Control>
                   </Form.Group>
-
                   <Button type='submit' variant='primary'>
                     Sign In
                   </Button>
                 </Form>
             </FormContainer>
-
         </div>
 )}
 
