@@ -14,14 +14,15 @@ const LoginPage = () => {
     const submitHandler = (e) => {
         e.preventDefault()
         setUser({firstname: username, password: password})
+        console.log(`username: ${username}`);
         // POST request using axios inside useEffect React hook
         axios.post(
           'http://localhost:3001/api/users/login', 
           {
-          username: user.firstname, password: user.password
+          username: username, password: password
           })
             .then(response => {
-              console.log(response.data.user)
+              console.log(response)
             }).catch(error => console.log(error))
     }
 

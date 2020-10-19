@@ -33,7 +33,7 @@ exports.user_login_post = [
       req.headers.token = token
       const user = { username }
       res.status(200).json({ user, authorized: true, token })
-      console.log(user);
+      console.log(user)
     }
   },
 ]
