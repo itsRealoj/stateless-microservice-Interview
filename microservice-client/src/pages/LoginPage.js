@@ -5,19 +5,23 @@ import axios from 'axios';
 
 
 const LoginPage = () => {
-  const [user, setUser] = useState({firstname: '', password: ''});
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [data, setData] = useState('')
  
         
     const submitHandler = (e) => {
         e.preventDefault()
-        setUser({firstname: username, password: password})
-        console.log(`username: ${username}`);
-        // POST request using axios inside useEffect React hook
+        
+        let user = {firstname: username}
+        console.log(`user:${user.firstname}`)
+
+        user.firstname ? alert(`welcome ${user.firstname}`) : alert('no user') && setData(user.firstname)
+        console.log(`data: ${data}`)
+        // POST request using axios 
         axios.post(
-          'http://localhost:3001/api/users/login', 
+          'http://localhost:5000/api/users/login', 
           {
           username: username, password: password
           })
