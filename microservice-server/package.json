@@ -4,7 +4,7 @@
   "description": "stateless microservice in Nodejs...",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "nodemon server.js",
     "test": "nyc mocha"
   },
   "author": "stephen ochieng",

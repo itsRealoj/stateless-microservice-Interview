@@ -40,7 +40,7 @@ npm install
 Since this is mostly an API with post and patch requests, testing will be done with [Postman](https://www.getpostman.com/)
 
 ### Authentication
-This is a mock authentication so you can pass in any username or password to login.
+You can pass in any username or password to login.
  1. Set the request to **POST** and the url to _/api/users/login_. 
  2. In the **Body** for the Postman request, select **x-www-form-urlencoded**.
  3. You will be setting 2 keys (for username and password). Set the ```username``` key to any name. Set ```password``` to any password (minimum of 6 characters).
@@ -79,8 +79,6 @@ Unit testing is done using Mocha (https://mochajs.org).
 
 Run ```npm test``` from the application's root directory.
 
-I used nyc to add coverage to mocha tests by following the Quick Start at (https://istanbul.js.org/)
-
 This is what you will do to add coverage to the mocha tests:
 
 $ npm install --save-dev nyc
@@ -98,15 +96,10 @@ Now, simply place the command nyc in front of your existing test command in pack
 All logs are saved in ```hackerbay.log``` in the application's root.
 
 
-## Built With
+## Server Built With
 
  * [Node.js](https://nodejs.org)
  * [Express](https://expressjs.com/)
  * [Mocha](https://mochajs.org/) - For testing
 
 
-## Results
-
- 1. Test: All tests specified in test.js with [Mocha](https://mochajs.org/) are running well (use: npm test)
- 
- 2. Istanbul_ coverage is working using nyc at https://istanbul.js.org/ to generate code test coverage reports.

@@ -6,7 +6,7 @@
 
 const http = require('http')
 const debug = require('debug')('stateless-microservice-hackerbay:server')
-const app = require('../app')
+const app = require('./app')
 
 /**
  * Get port from environment and store in Express.
