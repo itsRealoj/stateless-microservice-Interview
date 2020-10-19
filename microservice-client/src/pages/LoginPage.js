@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer';
 import axios from 'axios';
@@ -11,23 +11,19 @@ const LoginPage = () => {
   const [password, setPassword] = useState('')
  
         
-      const submitHandler = (e) => {
-          e.preventDefault()
-          setUser({firstname: username, password: password})
-          console.log(`username is: ${username}`);
-          console.log(`password is: ${password}`);
-      }
-
-     // POST request using axios inside useEffect React hook
-    // setUser({ name: username, password });
-    axios.post(
-      'http://localhost:3001/api/users/login', 
-      {
-      username: user.firstname, password: user.password
-      })
-        .then(response => {
-          console.log(response.data.user)
-        }).catch(error => console.log(error))
+    const submitHandler = (e) => {
+        e.preventDefault()
+        setUser({firstname: username, password: password})
+        // POST request using axios inside useEffect React hook
+        axios.post(
+          'http://localhost:3001/api/users/login', 
+          {
+          username: user.firstname, password: user.password
+          })
+            .then(response => {
+              console.log(response.data.user)
+            }).catch(error => console.log(error))
+    }
 
     return(
         <div>
