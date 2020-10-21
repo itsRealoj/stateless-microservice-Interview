@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PatchingPage from './pages/PatchingPage';
+import Switch from 'react-bootstrap/esm/Switch';
 
 function App() {
   return (
@@ -13,8 +14,11 @@ function App() {
       <Header/>
         <main className='py-3'>
           <Container>
-          <Route path='/patch' component={PatchingPage} />
-            <LoginPage/>
+            <Switch>
+            <Route exact path='/patch' component={PatchingPage} />
+            <Route exact path='/' component={LoginPage} />
+            </Switch>
+            {/* <LoginPage/> */}
           </Container>
         </main>
       <Footer/>

@@ -4,21 +4,22 @@ import FormContainer from '../components/FormContainer';
 import axios from 'axios';
 
 
-const LoginPage = () => {
-  const [user, setUser] = useState({firstname: '', password: ''});
-
+const PatchingPage = () => {
   const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [jsonObject, setJsonObject] = useState('Johnny')
+  const [jsonPatchObject, setJsonPatchObject] = useState('James')
  
         
     const submitHandler = (e) => {
         e.preventDefault()
-        setUser({firstname: username, password: password})
-        // POST request using axios 
-        axios.post(
-          'http://localhost:5000/api/users/login', 
+        // PATCH user data 
+        // setJsonObject({ "user": { "firstName": "John " } })
+        setJsonPatchObject({"op": "replace", "path": "/user/firstName", "value": "Jane"})
+        axios.patch(
+          'http://localhost:5000/api/patch-object', 
           {
-          username: username, password: password
+            jsonObject: setJsonObject([{ "user": { "firstName": "John " }}]),
+            jsonPatchObject: setJsonPatchObject([{"op": "replace", "path": "/user/firstName", "value": "Jane"}])
           })
             .then(response => {
               console.log(response)
@@ -31,29 +32,21 @@ const LoginPage = () => {
                 <h1>Patch Data</h1>
                 <Form onSubmit={submitHandler}>
                   <Form.Group controlId='username'>
-                    <Form.Label>User Name</Form.Label>
+                    <Form.Label>User: {jsonObject}</Form.Label>
                     <Form.Control
                       type='text'
-                      placeholder='Enter username'
-                      value={username}
+                      placeholder='Enter new name'
+                      value={jsonPatchObject}
                       onChange={(e) => setUsername(e.target.value)}
                     ></Form.Control>
                   </Form.Group>
-                  <Form.Group controlId='password'>
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      type='password'
-                      placeholder='Enter password'
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    ></Form.Control>
-                  </Form.Group>
                   <Button type='submit' variant='primary'>
-                    Sign In
+                    Patch User?
                   </Button>
                 </Form>
             </FormContainer>
         </div>
 )}
 
-export default LoginPage;
+export default PatchingPage
+  ;

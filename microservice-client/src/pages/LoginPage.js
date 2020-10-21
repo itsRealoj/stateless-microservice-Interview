@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer';
 import axios from 'axios';
-
+import { useHistory } from 'react-router'
+import { Link, Redirect, Route, Router, withRouter } from 'react-router-dom';
 
 const LoginPage = () => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [data, setData] = useState('')
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  const history = useHistory();
  
-        
+
     const submitHandler = (e) => {
         e.preventDefault()
         
-        let user = {firstname: username}
-        console.log(`user:${user.firstname}`)
-
-        user.firstname ? alert(`welcome ${user.firstname}`) : alert('no user') && setData(user.firstname)
         console.log(`data: ${data}`)
         // POST request using axios 
         axios.post(
@@ -27,11 +27,23 @@ const LoginPage = () => {
           })
             .then(response => {
               console.log(response)
-            }).catch(error => console.log(error))
-    }
-
+              setLoggedIn(true);
+              let user = {firstname: username}
+              user.firstname ? alert(`welcome ${user.firstname}`) : alert('no user') && setData(user.firstname)
+              setUsername('')
+              setPassword('')
+              history.push('/patch')
+            }).catch(error => console.error(error))
+          }
+          
+          useEffect(() => {
+            console.log(loggedIn)
+            
+          });
+    
+          
     return(
-        <div>
+      <div>
             <FormContainer>
                 <h1>Sign In</h1>
                 <Form onSubmit={submitHandler}>
@@ -61,4 +73,5 @@ const LoginPage = () => {
         </div>
 )}
 
+// loggedIn ? history.push("/patch") : console.log('h')
 export default LoginPage;
